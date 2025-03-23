@@ -1297,5 +1297,18 @@
     <a class="download-link" href="audio/I%20didn't%20have%20a%20dorm%20room,%20so%20I%20slept%20on%20the%20floor%20in%20friends'%20rooms,%20I%20returned%20coke%20bottles%20for%20the%205%20-%20deposits%20to%20buy%20food%20with,%20and%20I%20would%20walk%20the%207%20miles%20across%20town%20every%20Sunday%20night%20to%20get%20one%20good%20meal%20a%20week%20at%20the%20Hare%20Krishna%20temple..mp3" download>音声をダウンロード</a>
 </div>
 
+<script>
+const audios = document.querySelectorAll('audio');
+audios.forEach(audio => {
+  audio.addEventListener('play', () => {
+    audios.forEach(other => {
+      if (other !== audio) {
+        other.pause();
+        other.currentTime = 0;
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
